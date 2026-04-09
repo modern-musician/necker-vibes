@@ -1,5 +1,8 @@
 import FadeInSection from '@/components/FadeInSection'
 import ApplicationForm from '@/components/ApplicationForm'
+import ScrollIndicator from '@/components/ScrollIndicator'
+import BransonVideo from '@/components/BransonVideo'
+import HeroAboutTransition from '@/components/HeroAboutTransition'
 
 const mentors = [
   {
@@ -7,60 +10,70 @@ const mentors = [
     title: 'Anchor Mentor',
     stats: ['35B+ streams worldwide', '250M+ records sold', 'Multi-Grammy producer'],
     featured: true,
+    imageUrl: '/mentors/timbaland.jpg',
   },
   {
     name: 'Ron Fair',
     title: 'Legendary A&R Executive',
     stats: ['40B+ streams', '6 Grammy Awards', 'Chairman of Virgin Records'],
     featured: true,
+    imageUrl: '/mentors/ron-fair.png',
   },
   {
     name: 'Sooman Lee',
     title: 'Pioneer of K-Pop',
     stats: ['60B+ streams', 'SM Entertainment Founder', 'Revolutionized global pop'],
     featured: false,
+    imageUrl: '/mentors/sooman-lee.png',
   },
   {
     name: 'Poo Bear',
     title: 'Hitmaker & Songwriter',
     stats: ['Multi-platinum writer', 'Justin Bieber collaborator', 'Grammy nominated'],
     featured: false,
+    imageUrl: '/mentors/poo-bear.png',
   },
   {
     name: 'Dominic Owen',
     title: 'Music Producer',
     stats: ['Award-winning producer', 'Cross-genre expertise', 'Artist developer'],
     featured: false,
+    imageUrl: '/mentors/dominic-owen.png',
   },
   {
     name: 'Jamie Beard',
     title: 'Music Executive',
     stats: ['Industry veteran', 'Artist management', 'Global music strategy'],
     featured: false,
+    imageUrl: '/mentors/jamie-beard.png',
   },
   {
     name: 'Joe Killington',
     title: 'Producer & Songwriter',
     stats: ['UK hitmaker', 'Pop & electronic specialist', 'Chart-topping tracks'],
     featured: false,
+    imageUrl: '/mentors/joe-killington-alt.jpg',
   },
   {
     name: 'Leon Bolier',
     title: 'Electronic Producer',
     stats: ['Dance music pioneer', 'Trance & progressive', 'International DJ'],
     featured: false,
+    imageUrl: '/mentors/leon-bolier.jpg',
   },
   {
     name: 'Mark Hill',
     title: 'BRIT Award Winner',
     stats: ['Craig David collaborator', 'UK Garage legend', 'Multi-platinum producer'],
     featured: false,
+    imageUrl: '/mentors/mark-hill.png',
   },
 ]
 
 export default function Home() {
   return (
     <main>
+      <HeroAboutTransition />
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-video-container">
@@ -70,21 +83,18 @@ export default function Home() {
         </div>
 
         <div className="hero-content">
-          <h1 className="hero-title">NECKER VIBES</h1>
+          <img src="/necker-vibes-logo-larger.png" alt="Necker Vibes" className="hero-logo" />
           <p className="hero-tagline">Where Songs Are Born and Stars Are Made</p>
           <p className="hero-subtitle">The World&apos;s Stage Uniting Music, Mentorship, and Mission</p>
           <div className="hero-date">October 8&ndash;16, 2026 &bull; Necker Island</div>
           <a href="#apply" className="cta-button">Apply Now</a>
         </div>
 
-        <div className="scroll-indicator">
-          <span className="scroll-indicator-text">Scroll</span>
-          <div className="scroll-indicator-line" />
-        </div>
+        <ScrollIndicator />
       </section>
 
-      {/* About Section */}
-      <section className="section about-section">
+      {/* About Section — lifts into place as hero fades */}
+      <section className="section about-section about-section-rise">
         <div className="container">
           <FadeInSection>
             <div className="section-header">
@@ -93,9 +103,24 @@ export default function Home() {
             </div>
           </FadeInSection>
 
-          <div className="about-content">
-            <FadeInSection delay={100}>
-              <div className="about-text">
+          <div className="about-content about-content-stacked">
+            <div className="about-media-shell">
+              <FadeInSection delay={100}>
+                <BransonVideo />
+              </FadeInSection>
+
+              <FadeInSection delay={150}>
+                <blockquote className="quote-block quote-block-centered">
+                  <p className="quote-text">
+                    Necker Vibes is a bold and exciting initiative that resonates to the long-held dream of mine dating back to my earliest days on Necker Island.
+                  </p>
+                  <cite className="quote-author">— Sir Richard Branson, Founder of Virgin Group</cite>
+                </blockquote>
+              </FadeInSection>
+            </div>
+
+            <FadeInSection delay={200}>
+              <div className="about-text about-text-centered about-text-shell-width">
                 <p>
                   Necker Vibes is an unprecedented global music initiative that transforms undiscovered talent into tomorrow&apos;s stars. Through worldwide auditions, 16 exceptional artists are selected to journey to the exclusive Necker Island for an intensive week of creation and mentorship with the world&apos;s most celebrated producers.
                 </p>
@@ -108,14 +133,6 @@ export default function Home() {
               </div>
             </FadeInSection>
 
-            <FadeInSection delay={200}>
-              <blockquote className="quote-block">
-                <p className="quote-text">
-                  Necker Vibes is a bold and exciting initiative that resonates to the long-held dream of mine dating back to my earliest days on Necker Island.
-                </p>
-                <cite className="quote-author">Sir Richard Branson</cite>
-              </blockquote>
-            </FadeInSection>
           </div>
         </div>
       </section>
@@ -128,31 +145,51 @@ export default function Home() {
               <span className="section-label">World-Class Mentorship</span>
               <h2 className="section-title">Meet Your Mentors</h2>
               <p className="section-description">
-                Learn from the visionaries who have shaped modern music. Our confirmed mentors have collectively amassed over 135 billion streams and shaped the careers of countless artists.
+                Learn from the visionaries who have shaped modern music — collectively amassing over 135 billion streams.
               </p>
             </div>
           </FadeInSection>
+        </div>
 
+        {/* Horizontal scroll carousel */}
+        <div className="mentor-carousel-wrap">
+          <div className="mentor-carousel-track">
           <div className="mentor-grid">
             {mentors.map((mentor, index) => (
-              <FadeInSection key={mentor.name} delay={index * 50}>
-                <div className={`mentor-card ${mentor.featured ? 'featured' : ''}`}>
+              <div key={mentor.name} className="mentor-card">
+                {mentor.imageUrl ? (
+                  <div
+                    className="mentor-image"
+                    style={{
+                      backgroundImage: `url(${mentor.imageUrl})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center top',
+                    }}
+                  />
+                ) : (
                   <div className="mentor-image-placeholder">
                     {mentor.name.charAt(0)}
                   </div>
-                  <div className="mentor-overlay">
-                    <h3 className="mentor-name">{mentor.name}</h3>
-                    <span className="mentor-title">{mentor.title}</span>
-                    <div className="mentor-stats">
-                      {mentor.stats.map((stat, i) => (
-                        <div key={i} className="mentor-stat">{stat}</div>
-                      ))}
-                    </div>
+                )}
+                <div className="mentor-overlay">
+                  <h3 className="mentor-name">{mentor.name}</h3>
+                  <span className="mentor-title">{mentor.title}</span>
+                  <div className="mentor-stats">
+                    {mentor.stats.map((stat, i) => (
+                      <div key={i} className="mentor-stat">{stat}</div>
+                    ))}
                   </div>
                 </div>
-              </FadeInSection>
+              </div>
             ))}
           </div>
+          </div>
+        </div>
+
+        <div className="mentor-scroll-hint" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 6l6 6-6 6" />
+          </svg>
         </div>
       </section>
 
