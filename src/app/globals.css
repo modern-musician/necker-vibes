@@ -652,7 +652,7 @@ a { text-decoration: none; color: inherit; }
 .cta-section {
   background: linear-gradient(160deg, #06101f 0%, #0c0618 50%, #080808 100%);
   text-align: center;
-  margin-top: 40px;
+  padding-top: 120px;
 }
 .cta-content {
   display: flex;
