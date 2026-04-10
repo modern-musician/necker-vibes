@@ -724,7 +724,7 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--white-faint);
+  color: rgba(255,255,255,0.85);
 }
 
 .form-input,
@@ -843,4 +843,71 @@ a { text-decoration: none; color: inherit; }
 .footer-copyright {
   font-size: 0.75rem;
   color: rgba(255,255,255,0.2);
+}
+
+/* ─── Creator Video Section ──────────────────────────────── */
+.creator-video-section {
+  padding: 0;
+  background: var(--black);
+}
+.creator-video-section .container {
+  max-width: 960px;
+}
+.creator-video-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--black-2);
+}
+.creator-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.creator-video-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.35);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.creator-video-play-overlay:hover {
+  background: rgba(0,0,0,0.2);
+}
+.creator-video-play-button {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: transform 0.2s, background 0.2s;
+}
+.creator-video-play-button svg {
+  width: 32px;
+  height: 32px;
+  margin-left: 4px;
+}
+.creator-video-play-overlay:hover .creator-video-play-button {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.25);
+}
+
+/* ─── Branson Section (below mentors) ────────────────────── */
+.branson-section {
+  background: var(--black);
+  padding: 80px 0;
+}
+.branson-section .about-media-shell {
+  max-width: 800px;
+  margin: 0 auto;
 }

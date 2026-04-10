@@ -2,6 +2,7 @@ import FadeInSection from '@/components/FadeInSection'
 import ApplicationForm from '@/components/ApplicationForm'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import BransonVideo from '@/components/BransonVideo'
+import CreatorVideo from '@/components/CreatorVideo'
 import HeroAboutTransition from '@/components/HeroAboutTransition'
 
 const mentors = [
@@ -62,6 +63,20 @@ const mentors = [
     imageUrl: '/mentors/leon-bolier.jpg',
   },
   {
+    name: 'Chloe Bailey',
+    title: 'Singer, Songwriter & Actress',
+    stats: ['Multi-platinum artist', 'Grammy nominated', 'Global icon'],
+    featured: false,
+    imageUrl: '/mentors/chloe-bailey.png',
+  },
+  {
+    name: 'Taylor Parks',
+    title: 'Hit Songwriter',
+    stats: ['Multi-platinum writer', 'Ariana Grande collaborator', 'Grammy nominated'],
+    featured: false,
+    imageUrl: '/mentors/taylor-parks.png',
+  },
+  {
     name: 'Mark Hill',
     title: 'BRIT Award Winner',
     stats: ['Craig David collaborator', 'UK Garage legend', 'Multi-platinum producer'],
@@ -84,13 +99,22 @@ export default function Home() {
 
         <div className="hero-content">
           <img src="/necker-vibes-logo-larger.png" alt="Necker Vibes" className="hero-logo" />
-          <p className="hero-tagline">Where Songs Are Born and Stars Are Made</p>
-          <p className="hero-subtitle">The World&apos;s Stage Uniting Music, Mentorship, and Mission</p>
-          <div className="hero-date">October 8&ndash;16, 2026 &bull; Necker Island</div>
+          <p className="hero-tagline">A Musician&apos;s Exclusive Invitation</p>
+          <p className="hero-subtitle">A once-in-a-lifetime chance to create music with legendary mentors and music royalty</p>
+          <div className="hero-date">October 8&ndash;16, 2026 &bull; Richard Branson&apos;s Private Necker Island &bull; British Virgin Islands</div>
           <a href="#apply" className="cta-button">Apply Now</a>
         </div>
 
         <ScrollIndicator />
+      </section>
+
+      {/* Creator Video Section */}
+      <section className="section creator-video-section">
+        <div className="container">
+          <FadeInSection>
+            <CreatorVideo />
+          </FadeInSection>
+        </div>
       </section>
 
       {/* About Section — lifts into place as hero fades */}
@@ -104,28 +128,13 @@ export default function Home() {
           </FadeInSection>
 
           <div className="about-content about-content-stacked">
-            <div className="about-media-shell">
-              <FadeInSection delay={100}>
-                <BransonVideo />
-              </FadeInSection>
-
-              <FadeInSection delay={150}>
-                <blockquote className="quote-block quote-block-centered">
-                  <p className="quote-text">
-                    Necker Vibes is a bold and exciting initiative that resonates to the long-held dream of mine dating back to my earliest days on Necker Island.
-                  </p>
-                  <cite className="quote-author">— Sir Richard Branson, Founder of Virgin Group</cite>
-                </blockquote>
-              </FadeInSection>
-            </div>
-
             <FadeInSection delay={200}>
               <div className="about-text about-text-centered about-text-shell-width">
                 <p>
-                  Necker Vibes is an unprecedented global music initiative that transforms undiscovered talent into tomorrow&apos;s stars. Through worldwide auditions, 16 exceptional artists are selected to journey to the exclusive Necker Island for an intensive week of creation and mentorship with the world&apos;s most celebrated producers.
+                  Necker Vibes is an unprecedented global music initiative that transforms undiscovered talent into tomorrow&apos;s stars. Through worldwide auditions, 8 to 16 exceptional artists are selected to journey to Richard Branson&apos;s private Necker Island for an intensive week of creation and mentorship with the world&apos;s most celebrated producers.
                 </p>
                 <p>
-                  Over nine transformative days, each artist will be paired with legendary mentors to craft two original songs, resulting in 32 new tracks that will launch careers and capture the world&apos;s attention. The entire journey will be documented in an immersive docuseries, bringing audiences behind the scenes of this once-in-a-lifetime experience.
+                  Over eight transformative days, each artist will be paired with legendary mentors to craft two original songs, resulting in new tracks that will launch careers and capture the world&apos;s attention. The entire journey will be documented in an immersive docuseries, bringing audiences behind the scenes of this once-in-a-lifetime experience.
                 </p>
                 <p>
                   More than just music, Necker Vibes supports Virgin Unite&apos;s mental health initiatives, proving that creativity and purpose can change the world together.
@@ -145,7 +154,7 @@ export default function Home() {
               <span className="section-label">World-Class Mentorship</span>
               <h2 className="section-title">Meet Your Mentors</h2>
               <p className="section-description">
-                Learn from the visionaries who have shaped modern music — collectively amassing over 135 billion streams.
+                Learn from the visionaries who have shaped modern music — collectively amassing over 400 billion streams — and more to come.
               </p>
             </div>
           </FadeInSection>
@@ -190,6 +199,23 @@ export default function Home() {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 6l6 6-6 6" />
           </svg>
+        </div>
+      </section>
+
+      {/* Branson Video Section — moved below mentors */}
+      <section className="section branson-section">
+        <div className="container">
+          <FadeInSection>
+            <div className="about-media-shell">
+              <BransonVideo />
+              <blockquote className="quote-block quote-block-centered">
+                <p className="quote-text">
+                  Necker Vibes is a bold and exciting initiative that resonates to the long-held dream of mine dating back to my earliest days on Necker Island.
+                </p>
+                <cite className="quote-author">— Sir Richard Branson, Founder of Virgin Group</cite>
+              </blockquote>
+            </div>
+          </FadeInSection>
         </div>
       </section>
 

@@ -149,14 +149,14 @@ export default function ApplicationForm() {
 
       <div className="form-group">
         <label htmlFor="musicLink" className="form-label">
-          Spotify / Music Link *
+          Music Link (Spotify, SoundCloud, or other) *
         </label>
         <input
           type="url"
           id="musicLink"
           name="musicLink"
           className="form-input"
-          placeholder="https://open.spotify.com/artist/..."
+          placeholder="https://open.spotify.com/artist/... or any music URL"
           value={formData.musicLink}
           onChange={handleChange}
           required
