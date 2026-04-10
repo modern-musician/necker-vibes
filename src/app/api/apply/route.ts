@@ -19,6 +19,9 @@ export async function POST(request: NextRequest) {
     const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL
     if (webhookUrl) {
       try {
+        // Google Apps Script returns a 302 redirect after processing the POST.
+        // The data is written to the sheet before the redirect, so we follow
+        // the redirect (which returns the JSON response) to confirm success.
         const sheetResponse = await fetch(webhookUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -31,8 +34,9 @@ export async function POST(request: NextRequest) {
             musicLink: data.musicLink,
             additionalContent: data.additionalContent || '',
           }),
+          redirect: 'follow',
         })
-        if (!sheetResponse.ok) {
+        if (!sheetResponse.ok && sheetResponse.status !== 302) {
           console.error('Google Sheets webhook error:', sheetResponse.status, await sheetResponse.text())
         }
       } catch (sheetError) {
