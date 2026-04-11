@@ -917,5 +917,21 @@ a { text-decoration: none; color: inherit; }
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 0;
+}
+.branson-section .branson-video-large {
+  width: 100%;
+}
+.branson-section .branson-video {
+  border-radius: 4px 4px 0 0;
+  border-bottom: none;
+}
+.branson-section .quote-block-centered {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px;
+  margin: 0;
+  border: 1px solid rgba(201,165,90,0.25);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
 }
