@@ -70,7 +70,7 @@ const mentors = [
     imageUrl: '/mentors/chloe-bailey.png',
   },
   {
-    name: 'Taylor Parks',
+    name: 'Tayla Parx',
     title: 'Hit Songwriter',
     stats: ['Multi-platinum writer', 'Ariana Grande collaborator', 'Grammy nominated'],
     featured: false,
