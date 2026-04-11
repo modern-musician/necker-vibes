@@ -14,6 +14,7 @@ export default function CreatorVideo() {
         controls
         preload="metadata"
         playsInline
+        poster="/necker-vibes-creator-poster.jpg"
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
         onEnded={() => setPlaying(false)}
