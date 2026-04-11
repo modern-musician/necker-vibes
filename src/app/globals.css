@@ -343,7 +343,6 @@ a { text-decoration: none; color: inherit; }
 }
 .branson-video-large {
   width: 100%;
-  max-width: 640px;
   position: relative;
 }
 .branson-iframe,
@@ -913,8 +912,10 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
 }
 .branson-section .about-media-shell {
-  max-width: 800px;
+  max-width: 720px;
   width: 100%;
   margin: 0 auto;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
