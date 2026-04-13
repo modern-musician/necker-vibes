@@ -28,18 +28,18 @@ const mentors = [
     imageUrl: '/mentors/sooman-lee.png',
   },
   {
-    name: 'Tayla Parx',
-    title: 'Hit Songwriter',
-    stats: ['Multi-platinum writer', 'Ariana Grande collaborator', 'Grammy nominated'],
-    featured: false,
-    imageUrl: '/mentors/taylor-parks.png',
-  },
-  {
     name: 'Poo Bear',
     title: 'Hitmaker & Songwriter',
     stats: ['Multi-platinum writer', 'Justin Bieber collaborator', 'Grammy nominated'],
     featured: false,
     imageUrl: '/mentors/poo-bear.png',
+  },
+  {
+    name: 'Tayla Parx',
+    title: 'Hit Songwriter',
+    stats: ['Multi-platinum writer', 'Ariana Grande collaborator', 'Grammy nominated'],
+    featured: false,
+    imageUrl: '/mentors/taylor-parks.png',
   },
   {
     name: 'Dominic Owen',
