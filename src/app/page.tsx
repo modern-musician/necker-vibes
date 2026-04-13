@@ -28,11 +28,11 @@ const mentors = [
     imageUrl: '/mentors/sooman-lee.png',
   },
   {
-    name: 'Chloe Bailey',
-    title: 'Singer, Songwriter & Actress',
-    stats: ['Multi-platinum artist', 'Grammy nominated', 'Global icon'],
+    name: 'Tayla Parx',
+    title: 'Hit Songwriter',
+    stats: ['Multi-platinum writer', 'Ariana Grande collaborator', 'Grammy nominated'],
     featured: false,
-    imageUrl: '/mentors/chloe-bailey.png',
+    imageUrl: '/mentors/taylor-parks.png',
   },
   {
     name: 'Poo Bear',
@@ -68,13 +68,6 @@ const mentors = [
     stats: ['Dance music pioneer', 'Trance & progressive', 'International DJ'],
     featured: false,
     imageUrl: '/mentors/leon-bolier.jpg',
-  },
-  {
-    name: 'Tayla Parx',
-    title: 'Hit Songwriter',
-    stats: ['Multi-platinum writer', 'Ariana Grande collaborator', 'Grammy nominated'],
-    featured: false,
-    imageUrl: '/mentors/taylor-parks.png',
   },
   {
     name: 'Mark Hill',
