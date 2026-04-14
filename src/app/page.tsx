@@ -2,7 +2,6 @@ import FadeInSection from '@/components/FadeInSection'
 import ApplicationForm from '@/components/ApplicationForm'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import BransonVideo from '@/components/BransonVideo'
-import CreatorVideo from '@/components/CreatorVideo'
 import HeroAboutTransition from '@/components/HeroAboutTransition'
 
 const mentors = [
@@ -101,11 +100,19 @@ export default function Home() {
         <ScrollIndicator />
       </section>
 
-      {/* Creator Video Section */}
-      <section className="section creator-video-section">
+      {/* Branson Video + Quote Section */}
+      <section className="section branson-section">
         <div className="container">
           <FadeInSection>
-            <CreatorVideo />
+            <div className="about-media-shell">
+              <BransonVideo />
+              <blockquote className="quote-block quote-block-centered">
+                <p className="quote-text">
+                  Necker Vibes is a bold and exciting initiative that resonates to the long-held dream of mine dating back to my earliest days on Necker Island.
+                </p>
+                <cite className="quote-author">&mdash; Sir Richard Branson, Founder of Virgin Group</cite>
+              </blockquote>
+            </div>
           </FadeInSection>
         </div>
       </section>
@@ -195,22 +202,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Branson Video Section — moved below mentors */}
-      <section className="section branson-section">
-        <div className="container">
-          <FadeInSection>
-            <div className="about-media-shell">
-              <BransonVideo />
-              <blockquote className="quote-block quote-block-centered">
-                <p className="quote-text">
-                  Necker Vibes is a bold and exciting initiative that resonates to the long-held dream of mine dating back to my earliest days on Necker Island.
-                </p>
-                <cite className="quote-author">— Sir Richard Branson, Founder of Virgin Group</cite>
-              </blockquote>
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section cta-section">
