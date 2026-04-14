@@ -100,23 +100,6 @@ export default function Home() {
         <ScrollIndicator />
       </section>
 
-      {/* Branson Video + Quote Section */}
-      <section className="section branson-section">
-        <div className="container">
-          <FadeInSection>
-            <div className="about-media-shell">
-              <BransonVideo />
-              <blockquote className="quote-block quote-block-centered">
-                <p className="quote-text">
-                  Necker Vibes is a bold and exciting initiative that resonates to the long-held dream of mine dating back to my earliest days on Necker Island.
-                </p>
-                <cite className="quote-author">&mdash; Sir Richard Branson, Founder of Virgin Group</cite>
-              </blockquote>
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
-
       {/* About Section — lifts into place as hero fades */}
       <section className="section about-section about-section-rise">
         <div className="container">
@@ -202,6 +185,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Branson Video Section */}
+      <section className="section branson-section">
+        <div className="container">
+          <FadeInSection>
+            <div className="about-media-shell">
+              <BransonVideo />
+              <blockquote className="quote-block quote-block-centered">
+                <p className="quote-text">
+                  Necker Vibes is a bold and exciting initiative that resonates to the long-held dream of mine dating back to my earliest days on Necker Island.
+                </p>
+                <cite className="quote-author">&mdash; Sir Richard Branson, Founder of Virgin Group</cite>
+              </blockquote>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="section cta-section">
